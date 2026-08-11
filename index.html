@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#f5f3ee" />
+  <meta name="description" content="Nivo — salas privativas, endereço fiscal/comercial e estrutura profissional sob demanda no Boqueirão, Curitiba." />
+  <title>Nivo — Infraestrutura profissional sob demanda</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --ink:#171714;
+      --ink-2:#2a2925;
+      --paper:#f5f3ee;
+      --paper-2:#ece8df;
+      --surface:#fffdf8;
+      --accent:#314c3f;
+      --accent-2:#6f8b77;
+      --sand:#d4c5a5;
+      --line:rgba(23,23,20,.12);
+      --line-strong:rgba(23,23,20,.22);
+      --shadow:0 20px 60px rgba(23,23,20,.10);
+      --shadow-soft:0 10px 30px rgba(23,23,20,.07);
+      --r-sm:16px;
+      --r-md:24px;
+      --r-lg:34px;
+      --max:1220px;
+      --section:clamp(52px,6.3vw,88px);
+      --pad:clamp(18px,3.5vw,42px);
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:92px}
+    body{
+      margin:0;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at 14% 10%, rgba(111,139,119,.08), transparent 28%),
+        radial-gradient(circle at 92% 18%, rgba(212,197,165,.16), transparent 30%),
+        var(--paper);
+      font-family:"DM Sans",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      line-height:1.5;
+      -webkit-font-smoothing:antialiased;
+      overflow-x:hidden;
+    }
+    img{max-width:100%;display:block}
+    a{color:inherit;text-decoration:none}
+    button,input{font:inherit}
+    button{cursor:pointer}
+    ::selection{background:var(--ink);color:var(--paper)}
+
+    .container{width:min(var(--max),calc(100% - 2*var(--pad)));margin-inline:auto}
+    .section{padding-block:var(--section);position:relative}
+    .eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:.78rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
+    .eyebrow::before{content:"";width:20px;height:1px;background:currentColor}
+    h1,h2,h3{font-family:"Manrope",sans-serif;line-height:1.04;letter-spacing:-.045em;margin:0}
+    h1{font-size:clamp(2.75rem,7vw,6.8rem);max-width:11ch}
+    h2{font-size:clamp(2.15rem,5vw,4.65rem);max-width:13ch}
+    h3{font-size:clamp(1.22rem,2vw,1.7rem)}
+    p{margin:0;color:rgba(23,23,20,.74)}
+    .lead{font-size:clamp(1.02rem,1.6vw,1.24rem);max-width:62ch}
+    .muted{color:rgba(23,23,20,.55)}
+
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 22px;border-radius:999px;border:1px solid transparent;font-weight:700;transition:.25s ease;white-space:nowrap}
+    .btn svg{width:17px;height:17px}
+    .btn-primary{background:var(--ink);color:white;box-shadow:0 10px 28px rgba(23,23,20,.18)}
+    .btn-primary:hover{transform:translateY(-2px);background:#000}
+    .btn-secondary{border-color:var(--line-strong);background:rgba(255,255,255,.42);backdrop-filter:blur(10px)}
+    .btn-secondary:hover{border-color:var(--ink);background:var(--surface)}
+    .btn-ghost{padding-inline:0;min-height:auto;border:0;border-radius:0;border-bottom:1px solid currentColor}
+
+    .nav-wrap{position:fixed;inset:18px 0 auto;z-index:50;pointer-events:none}
+    .nav{pointer-events:auto;display:flex;align-items:center;justify-content:space-between;gap:20px;width:min(var(--max),calc(100% - 2*var(--pad)));margin:auto;padding:10px 12px 10px 18px;border:1px solid rgba(23,23,20,.10);border-radius:999px;background:rgba(245,243,238,.82);backdrop-filter:blur(18px) saturate(130%);box-shadow:0 8px 30px rgba(23,23,20,.08)}
+    .brand{display:flex;align-items:center;gap:11px;font-family:"Manrope";font-weight:800;letter-spacing:-.04em;font-size:1.22rem}
+    .brand-mark{width:32px;height:32px;border-radius:50%;border:1px solid var(--ink);display:grid;place-items:center;position:relative}
+    .brand-mark::before,.brand-mark::after{content:"";position:absolute;border-radius:50%;border:1px solid var(--ink)}
+    .brand-mark::before{width:18px;height:18px;opacity:.45}.brand-mark::after{width:6px;height:6px;background:var(--ink)}
+    .nav-links{display:flex;align-items:center;gap:25px;font-size:.92rem;font-weight:600}
+    .nav-links a{opacity:.72;transition:.2s}.nav-links a:hover{opacity:1}
+    .menu-btn{display:none;width:44px;height:44px;border:0;border-radius:50%;background:var(--ink);color:white}
+
+    .hero{min-height:100svh;display:grid;align-items:end;padding-top:118px;padding-bottom:36px}
+    .hero-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(360px,.95fr);gap:clamp(28px,5vw,78px);align-items:end}
+    .hero-copy{padding-bottom:clamp(14px,4vw,58px)}
+    .hero-copy .eyebrow{margin-bottom:24px}
+    .hero-copy .lead{margin-top:27px;max-width:610px}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
+    .hero-meta{display:flex;gap:18px;align-items:center;margin-top:26px;color:rgba(23,23,20,.56);font-size:.9rem}
+    .hero-meta span{display:flex;align-items:center;gap:7px}.hero-meta i{width:7px;height:7px;border-radius:50%;background:var(--accent);display:inline-block}
+    .hero-visual{position:relative;min-height:min(68vh,720px);border-radius:var(--r-lg);overflow:hidden;background:#dcd8cf;box-shadow:var(--shadow)}
+    .hero-visual::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 58%,rgba(0,0,0,.42));pointer-events:none}
+    .hero-visual img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;filter:saturate(.72) contrast(.95)}
+    .hero-card{position:absolute;z-index:2;left:20px;right:20px;bottom:20px;padding:18px;border-radius:22px;background:rgba(250,248,242,.88);backdrop-filter:blur(14px);display:grid;grid-template-columns:1fr auto;gap:16px;align-items:center;border:1px solid rgba(255,255,255,.55)}
+    .hero-card small{display:block;color:rgba(23,23,20,.54);margin-top:4px}.hero-card strong{font-family:Manrope;font-size:1.06rem}
+    .floating-pill{position:absolute;z-index:3;right:18px;top:18px;padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.86);backdrop-filter:blur(12px);font-size:.78rem;font-weight:700;box-shadow:var(--shadow-soft)}
+
+    .need-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:38px}
+    .need-card{position:relative;min-height:184px;padding:22px 24px;border-radius:var(--r-md);background:rgba(255,253,248,.58);border:1px solid var(--line);display:flex;flex-direction:column;justify-content:space-between;transition:.32s cubic-bezier(.2,.8,.2,1);overflow:hidden}
+    .need-card:hover{transform:translateY(-6px);background:var(--surface);box-shadow:var(--shadow-soft);border-color:transparent}
+     .need-card .num{font:700 .78rem/1 Manrope;color:var(--accent);letter-spacing:.08em}.need-card p{margin-top:9px;max-width:29ch}.need-card .arrow{display:none}
+    .need-cta{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;margin-top:16px;padding:9px 13px;border-radius:999px;background:var(--ink);color:#fff;font-size:.78rem;font-weight:800;box-shadow:0 8px 20px rgba(23,23,20,.14);transition:.25s ease}.need-cta svg{width:16px;height:16px;fill:currentColor}.need-card:hover .need-cta{transform:translateY(-2px);background:#000;box-shadow:0 12px 26px rgba(23,23,20,.20)}
+    .need-card::before{content:"";position:absolute;width:130px;height:130px;border:1px solid rgba(49,76,63,.12);border-radius:50%;right:-42px;top:-42px}
+
+    .concept-shell{display:grid;grid-template-columns:.86fr 1.14fr;gap:clamp(26px,6vw,86px);align-items:start}
+    .concept-copy{position:sticky;top:120px}.concept-copy .lead{margin-top:24px}.concept-copy .mini-list{margin-top:28px;display:grid;gap:10px}.mini-item{display:flex;align-items:center;gap:12px;font-size:.94rem}.mini-item::before{content:"";width:9px;height:9px;border:2px solid var(--accent);border-radius:50%}
+    .comparison-stack{display:grid;gap:15px}
+    .compare-card{padding:26px;border-radius:var(--r-md);border:1px solid var(--line);background:rgba(255,255,255,.45)}
+    .compare-card.dark{background:var(--ink);color:white;border-color:transparent}.compare-card.dark p{color:rgba(255,255,255,.68)}
+    .compare-head{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:22px}.compare-head span{font-size:.78rem;text-transform:uppercase;letter-spacing:.12em;opacity:.55}
+    .cost-list{display:grid;gap:10px}.cost-row{display:flex;justify-content:space-between;gap:18px;padding:12px 0;border-top:1px solid rgba(23,23,20,.10)}.dark .cost-row{border-color:rgba(255,255,255,.13)}
+
+    .rooms-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:36px}.rooms-head p{max-width:560px}
+     .room-carousel{position:relative}.room-grid{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:4px 2px 18px;scrollbar-width:none;overscroll-behavior-inline:contain}.room-grid::-webkit-scrollbar{display:none}.room-card{flex:0 0 min(390px,calc((100% - 28px)/3));scroll-snap-align:start;scroll-snap-stop:always}
+    .room-carousel-ui{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:8px}.room-scroll-hint{display:flex;align-items:center;gap:9px;font-size:.78rem;color:rgba(23,23,20,.55);font-weight:600}.room-scroll-hint::before{content:"↔";display:grid;place-items:center;width:30px;height:30px;border:1px solid var(--line);border-radius:50%;color:var(--accent)}.room-carousel-actions{display:flex;gap:8px}.room-nav{width:42px;height:42px;border:1px solid var(--line-strong);background:rgba(255,255,255,.55);border-radius:50%;display:grid;place-items:center;transition:.2s}.room-nav:hover{background:var(--ink);color:white;transform:translateY(-2px)}.room-nav:disabled{opacity:.28;pointer-events:none}.room-progress{height:3px;flex:1;max-width:220px;border-radius:999px;background:var(--line);overflow:hidden}.room-progress>span{display:block;width:33.333%;height:100%;background:var(--accent);border-radius:inherit;transform:translateX(0);transition:transform .25s ease}
+    .room-card{background:var(--surface);border-radius:var(--r-md);overflow:hidden;border:1px solid var(--line);transition:.3s}
+    .room-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-soft)}
+    .room-image{aspect-ratio:4/3;overflow:hidden;background:var(--paper-2)}.room-image img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease;filter:saturate(.78)}.room-card:hover img{transform:scale(1.035)}
+    .room-body{padding:22px}.room-top{display:flex;align-items:start;justify-content:space-between;gap:16px}.room-body p{font-size:.93rem;margin-top:8px}.tags{display:flex;flex-wrap:wrap;gap:7px;margin:18px 0 20px}.tag{font-size:.76rem;padding:7px 10px;border-radius:999px;background:var(--paper-2)}
+    .room-foot{display:flex;justify-content:space-between;align-items:center;gap:12px;border-top:1px solid var(--line);padding-top:17px}.room-foot span{font-size:.8rem;color:rgba(23,23,20,.5)}
+
+    .address-section{background:var(--ink);color:white;overflow:hidden}.address-section p{color:rgba(255,255,255,.67)}.address-section .eyebrow{color:#b9cbbf}.address-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,90px);align-items:center}.address-copy .lead{margin-top:24px;max-width:560px}.address-actions{margin-top:30px}.address-actions .btn-primary{background:white;color:var(--ink)}
+    .benefit-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.benefit{padding:22px;border-radius:20px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12)}.benefit strong{display:block;font-family:Manrope;margin-bottom:7px}.benefit p{font-size:.88rem}.benefit .icon{width:36px;height:36px;border-radius:12px;border:1px solid rgba(255,255,255,.16);display:grid;place-items:center;margin-bottom:28px}
+    .legal-note{font-size:.78rem;margin-top:18px!important;color:rgba(255,255,255,.45)!important}
+
+    .bridge{position:relative}.bridge-layout{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(30px,6vw,90px);align-items:center}.bridge-copy .lead{margin-top:22px}.week{background:rgba(255,253,248,.65);border:1px solid var(--line);border-radius:var(--r-lg);padding:clamp(22px,4vw,38px);box-shadow:var(--shadow-soft)}
+    .week-row{display:grid;grid-template-columns:88px 1fr auto;gap:16px;align-items:center;padding:18px 0;border-bottom:1px solid var(--line)}.week-row:last-child{border:0}.week-day{font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--accent)}.week-row strong{font-family:Manrope}.week-badge{font-size:.76rem;padding:6px 9px;border-radius:999px;background:var(--paper-2)}
+
+    .audience-section{padding-block:clamp(34px,4.6vw,62px)}
+    .audience-playground{min-height:clamp(330px,48svh,520px);max-height:60svh;border:1px solid rgba(49,76,63,.14);border-radius:var(--r-lg);background:linear-gradient(135deg,#dfe7df 0%,#d3ded5 50%,#c7d5cb 100%);overflow:hidden;display:grid;grid-template-columns:.84fr 1.16fr;align-items:center;gap:clamp(22px,5vw,64px);padding:clamp(24px,4.2vw,50px);position:relative;box-shadow:0 24px 70px rgba(23,23,20,.10),inset 0 1px 0 rgba(255,255,255,.82);isolation:isolate}
+    .audience-playground::before{content:"";position:absolute;width:430px;height:430px;border-radius:50%;border:1px solid rgba(49,76,63,.12);right:-150px;top:-230px;box-shadow:0 0 0 62px rgba(49,76,63,.035),0 0 0 124px rgba(49,76,63,.022);filter:drop-shadow(0 24px 44px rgba(49,76,63,.08));z-index:-1}
+    .audience-playground::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 74% 48%,rgba(49,76,63,.18),transparent 31%),linear-gradient(115deg,transparent 35%,rgba(255,255,255,.34) 58%,transparent 76%);pointer-events:none;z-index:-1}
+    .audience-copy{position:relative;z-index:2}.audience-copy h2{font-size:clamp(2rem,4.4vw,4rem);max-width:12ch}.audience-copy p{margin-top:16px;max-width:44ch}.audience-note{display:inline-flex;align-items:center;gap:8px;margin-top:18px;font-size:.78rem;font-weight:700;color:var(--accent)}.audience-note::before{content:"↗";width:28px;height:28px;border-radius:50%;display:grid;place-items:center;border:1px solid var(--line-strong);background:rgba(255,255,255,.45)}
+    .role-cloud{position:relative;z-index:2;display:grid;gap:12px;transform:rotate(-1.5deg);padding-block:14px;mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent)}
+    .role-row{display:flex;gap:10px;flex-wrap:nowrap;width:max-content;will-change:transform;animation:roleDrift 22s linear infinite}.role-row:nth-child(2){animation-direction:reverse;animation-duration:27s;transform:translateX(-70px)}.role-row:nth-child(3){animation-duration:31s;transform:translateX(-28px)}
+    .audience{padding:11px 15px;border-radius:999px;border:1px solid rgba(23,23,20,.11);background:rgba(255,255,255,.84);backdrop-filter:blur(14px) saturate(130%);font-weight:750;font-size:.87rem;letter-spacing:-.01em;white-space:nowrap;box-shadow:0 9px 24px rgba(23,23,20,.065),inset 0 1px 0 rgba(255,255,255,.95);transition:.22s cubic-bezier(.2,.8,.2,1);text-rendering:geometricPrecision}.audience:hover{background:var(--ink);color:white;border-color:var(--ink);transform:translateY(-3px) scale(1.02);box-shadow:0 15px 32px rgba(23,23,20,.18)}
+    @keyframes roleDrift{from{transform:translate3d(0,0,0)}to{transform:translate3d(-130px,0,0)}}
+
+    .plans{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:38px}.plan{position:relative;border-radius:var(--r-md);padding:26px;background:var(--surface);border:1px solid var(--line);display:flex;flex-direction:column;min-height:440px}.plan.featured{background:var(--ink);color:white;border-color:var(--ink);transform:translateY(-10px);box-shadow:var(--shadow)}.plan.featured p,.plan.featured .plan-list{color:rgba(255,255,255,.7)}.plan-label{font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:800}.featured .plan-label{color:#b9cbbf}.plan h3{margin-top:18px}.plan-desc{margin-top:8px;min-height:48px}.plan-price{font:800 clamp(1.8rem,3.3vw,3rem)/1 Manrope;margin:28px 0 8px}.plan-price small{font:500 .9rem DM Sans;color:inherit;opacity:.6}.plan-list{display:grid;gap:12px;margin:22px 0 30px;color:rgba(23,23,20,.7)}.plan-list span{display:flex;gap:10px;align-items:flex-start}.plan-list i{font-style:normal;color:var(--accent)}.featured .plan-list i{color:#cfe0d4}.plan .btn{margin-top:auto}.featured .btn-primary{background:white;color:var(--ink)}
+    .plan-badge{position:absolute;right:16px;top:16px;display:inline-flex;align-items:center;gap:6px;padding:7px 10px;border-radius:999px;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.075em;border:1px solid rgba(49,76,63,.13);background:#edf1ec;color:var(--accent);box-shadow:0 5px 16px rgba(23,23,20,.05)}.plan-badge svg{width:13px;height:13px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}.plan-badge.base{background:#f0eadf;color:#6b5941;border-color:rgba(107,89,65,.14)}.plan-badge.pro{background:#fff;color:var(--ink);border-color:rgba(255,255,255,.8);box-shadow:0 6px 20px rgba(0,0,0,.16)}.plan-badge.pro svg{color:#9f6846;fill:rgba(159,104,70,.12)}
+
+    .process-wrap{display:grid;gap:34px}.process-intro{display:flex;align-items:end;justify-content:space-between;gap:30px}.process-intro .lead{max-width:560px}.process-steps{--progress:0%;position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding-top:26px}.process-steps::before{content:"";position:absolute;left:6%;right:6%;top:10px;height:2px;background:var(--line)}.process-steps::after{content:"";position:absolute;left:6%;top:10px;width:var(--progress);height:2px;background:var(--accent);transition:width .18s linear}.process-step{position:relative;padding:22px 20px 20px;border:1px solid var(--line);border-radius:20px;background:rgba(255,253,248,.62);min-height:190px;transition:.3s cubic-bezier(.2,.8,.2,1)}.process-step::before{content:"";position:absolute;top:-22px;left:24px;width:12px;height:12px;border-radius:50%;background:var(--paper);border:2px solid var(--line-strong);z-index:2;transition:.25s}.process-step.active{background:var(--surface);box-shadow:var(--shadow-soft);transform:translateY(-5px);border-color:rgba(49,76,63,.24)}.process-step.active::before{background:var(--accent);border-color:var(--accent);box-shadow:0 0 0 5px rgba(49,76,63,.10)}.step-num{display:inline-grid;place-items:center;width:38px;height:38px;border-radius:12px;background:var(--paper-2);font:800 .78rem Manrope;color:var(--accent);margin-bottom:24px}.process-step h3{font-size:1.18rem}.process-step p{margin-top:8px;font-size:.9rem}.process-arrow{position:absolute;right:14px;top:14px;opacity:.22;font-size:1.2rem;transition:.25s}.process-step.active .process-arrow{opacity:1;transform:translate(2px,-2px)}
+
+    .location-card{display:grid;grid-template-columns:1fr 1.2fr;min-height:420px;border-radius:var(--r-lg);overflow:hidden;background:var(--surface);border:1px solid var(--line);box-shadow:var(--shadow-soft)}.location-copy{padding:clamp(28px,5vw,56px);display:flex;flex-direction:column;justify-content:center}.location-copy p{margin-top:16px}.location-actions{margin-top:28px}.map-sim{position:relative;background:#dedbd2;overflow:hidden;min-height:340px}.map-sim::before{content:"";position:absolute;inset:0;background:linear-gradient(25deg,transparent 46%,rgba(49,76,63,.15) 47%,rgba(49,76,63,.15) 51%,transparent 52%),linear-gradient(-35deg,transparent 38%,rgba(255,255,255,.62) 39%,rgba(255,255,255,.62) 44%,transparent 45%),repeating-linear-gradient(0deg,transparent 0 46px,rgba(23,23,20,.04) 47px 48px),repeating-linear-gradient(90deg,transparent 0 62px,rgba(23,23,20,.04) 63px 64px)}.pin{position:absolute;left:54%;top:48%;transform:translate(-50%,-50%);width:56px;height:56px;border-radius:50% 50% 50% 0;background:var(--ink);transform-origin:center;rotate:-45deg;box-shadow:0 12px 25px rgba(23,23,20,.25)}.pin::before{content:"";position:absolute;width:16px;height:16px;border-radius:50%;background:white;left:20px;top:20px}
+
+    .faq{display:grid;grid-template-columns:.75fr 1.25fr;gap:clamp(32px,6vw,90px)}.faq-list{border-top:1px solid var(--line)}.faq-item{border-bottom:1px solid var(--line)}.faq-q{width:100%;padding:20px 0;border:0;background:none;display:flex;align-items:center;justify-content:space-between;gap:18px;text-align:left;color:var(--ink);font-weight:700}.faq-q span:last-child{font-size:1.25rem;transition:transform .25s}.faq-item.open .faq-q span:last-child{transform:rotate(45deg)}.faq-a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .3s ease}.faq-a>div{overflow:hidden}.faq-a p{padding:0 34px 20px 0;font-size:.94rem}.faq-item.open .faq-a{grid-template-rows:1fr}
+
+
+    .faq-section{position:relative;padding-bottom:clamp(70px,8vw,112px)}.faq-section::after{content:"";position:absolute;left:50%;bottom:22px;width:1px;height:42px;background:linear-gradient(to bottom,var(--line-strong),transparent)}.faq-to-cta{position:absolute;left:50%;bottom:4px;transform:translateX(-50%);display:flex;align-items:center;gap:8px;padding:7px 11px;border-radius:999px;background:var(--paper);border:1px solid var(--line);font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.09em;color:rgba(23,23,20,.52);z-index:3}.faq-to-cta::after{content:"↓";color:var(--accent);font-size:.8rem}.contact-section{padding-top:0;margin-top:-12px}.contact-section .cta-panel{box-shadow:0 24px 70px rgba(49,76,63,.10)}
+    .cta-panel{padding:clamp(34px,7vw,80px);border-radius:var(--r-lg);background:linear-gradient(135deg,#e2dccf,#c9d3c9);position:relative;overflow:hidden}.cta-panel::after{content:"";position:absolute;width:380px;height:380px;border-radius:50%;border:1px solid rgba(23,23,20,.14);right:-120px;top:-180px;box-shadow:0 0 0 55px rgba(255,255,255,.10),0 0 0 110px rgba(255,255,255,.08)}.cta-panel h2{position:relative;z-index:2}.cta-panel p{position:relative;z-index:2;margin-top:20px;max-width:600px}.cta-panel .hero-actions{position:relative;z-index:2}
+
+    footer{padding:34px 0 42px;border-top:1px solid var(--line)}.footer-grid{display:grid;grid-template-columns:1.2fr .8fr .8fr;gap:28px}.footer-brand p{margin-top:12px;max-width:360px;font-size:.9rem}.footer-col strong{font-family:Manrope}.footer-col div{display:grid;gap:8px;margin-top:12px;font-size:.9rem;color:rgba(23,23,20,.62)}.footer-bottom{display:flex;justify-content:space-between;gap:20px;padding-top:28px;margin-top:28px;border-top:1px solid var(--line);font-size:.8rem;color:rgba(23,23,20,.5)}
+
+    .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.2,1)}.reveal.visible{opacity:1;transform:none}
+
+    @media (max-width:980px){
+      .nav-links{display:none}.nav .btn{display:none}.menu-btn{display:grid;place-items:center}
+      .hero{min-height:auto;padding-top:118px}.hero-grid{grid-template-columns:1fr}.hero-copy{padding-bottom:4px}.hero-visual{min-height:520px}.hero-copy h1{max-width:12ch}
+      .concept-shell,.address-grid,.bridge-layout,.process-wrap,.faq{grid-template-columns:1fr}.concept-copy{position:static}.benefit-grid{grid-template-columns:repeat(2,1fr)}
+      .room-card{flex-basis:min(390px,72vw)}
+      .plans{grid-template-columns:1fr 1fr}.plan.featured{transform:none}.plan:last-child{grid-column:1/-1;min-height:auto}
+      .location-card{grid-template-columns:1fr}.map-sim{min-height:360px}
+      .footer-grid{grid-template-columns:1fr 1fr}.footer-brand{grid-column:1/-1}
+    }
+
+    @media (max-width:680px){
+      :root{--section:50px;--pad:16px;--r-lg:26px;--r-md:20px}
+      .nav-wrap{inset:10px 0 auto}.nav{padding-left:14px}.brand{font-size:1.1rem}.brand-mark{width:29px;height:29px}
+      h1{font-size:clamp(2.55rem,13.6vw,4.6rem)}h2{font-size:clamp(2rem,10vw,3.25rem)}
+      .hero{padding-top:94px;padding-bottom:16px}.hero-copy .eyebrow{margin-bottom:17px}.hero-copy .lead{margin-top:20px}.hero-actions{margin-top:24px;display:grid;grid-template-columns:1fr 1fr;gap:8px}.hero-actions .btn{min-height:49px;padding-inline:12px;font-size:.88rem}.hero-meta{font-size:.8rem;gap:12px;margin-top:18px;flex-wrap:wrap}.hero-visual{min-height:56svh;max-height:610px;border-radius:24px}.hero-card{left:12px;right:12px;bottom:12px;padding:14px;border-radius:17px}.floating-pill{top:12px;right:12px}
+      .need-grid{grid-template-columns:1fr;gap:8px;margin-top:26px}.need-card{min-height:148px;padding:18px 19px}.need-card p{max-width:none}.need-cta{margin-top:13px;padding:8px 11px}
+      .rooms-head{display:block}.rooms-head p{margin-top:16px}.room-grid{gap:10px;margin-right:calc(var(--pad)*-1);padding-right:var(--pad)}.room-card,.room-card:last-child{flex:0 0 82vw;display:block}.room-card:last-child .room-image{height:auto;aspect-ratio:4/3}.room-carousel-ui{margin-top:2px}.room-progress{max-width:110px}.room-body{padding:14px}.room-body p{font-size:.82rem}.room-top{display:block}.room-top .muted{font-size:.74rem}.tags{gap:5px;margin:12px 0 15px}.tag{padding:5px 7px;font-size:.68rem}.room-foot{display:block;padding-top:12px}.room-foot .btn-ghost{margin-top:8px;font-size:.8rem}
+      .benefit-grid{gap:8px}.benefit{padding:16px}.benefit .icon{margin-bottom:18px}.benefit p{font-size:.78rem}
+      .week{padding:18px}.week-row{grid-template-columns:62px 1fr;gap:10px}.week-badge{display:none}
+      .audience-playground{min-height:0;max-height:none;grid-template-columns:1fr;padding:24px 18px;gap:22px}.audience-copy h2{font-size:clamp(2rem,9.5vw,3rem);max-width:14ch}.audience-copy p{font-size:.9rem}.audience-note{display:none}.role-cloud{overflow:hidden;margin-inline:-18px;padding:4px 18px;transform:none}.role-row{gap:7px;animation-duration:24s}.audience{font-size:.78rem;padding:8px 10px}
+      .plans{grid-template-columns:1fr;gap:10px}.plan,.plan:last-child{grid-column:auto;min-height:auto;padding:21px}.plan-desc{min-height:auto}.plan-price{margin-top:22px}.plan-list{margin-bottom:24px}
+      .process-intro{display:block}.process-intro .lead{margin-top:16px}.process-steps{grid-template-columns:1fr;padding:0 0 0 26px;gap:9px}.process-steps::before{left:7px;right:auto;top:8%;bottom:8%;width:2px;height:auto}.process-steps::after{left:7px;top:8%;width:2px;height:var(--progress);transition:height .18s linear}.process-step{min-height:0;padding:18px 18px 18px 19px}.process-step::before{left:-26px;top:28px}.process-step.active{transform:translateX(4px)}.step-num{margin-bottom:14px}
+      .location-copy{padding:26px 22px}.map-sim{min-height:290px}
+      .faq-a p{padding-right:0}.cta-panel{padding:32px 22px}.cta-panel .hero-actions{grid-template-columns:1fr}
+      .footer-grid{grid-template-columns:1fr}.footer-brand{grid-column:auto}.footer-bottom{display:block}.footer-bottom span{display:block;margin-top:6px}
+    }
+
+    @media (max-width:390px){
+      .hero-actions{grid-template-columns:1fr}.hero-meta{display:grid;gap:6px}.room-card{flex-basis:86vw}.room-body{padding:12px}.room-body h3{font-size:1rem}.tag:nth-child(n+3){display:none}.benefit{padding:14px}.benefit strong{font-size:.92rem}.benefit p{font-size:.74rem}
+    }
+
+    @media (prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}
+    }
+
+    .mobile-menu{position:fixed;inset:0;z-index:90;background:rgba(23,23,20,.96);color:white;padding:90px 24px 30px;transform:translateY(-100%);transition:transform .35s cubic-bezier(.2,.8,.2,1)}.mobile-menu.open{transform:none}.mobile-menu nav{display:grid;gap:22px;font:700 clamp(1.7rem,8vw,2.4rem) Manrope}.mobile-menu .close{position:absolute;right:18px;top:18px;width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.2);background:none;color:white;font-size:1.3rem}.mobile-menu small{display:block;margin-top:32px;color:rgba(255,255,255,.55)}
+  </style>
+</head>
+<body>
+  <div class="nav-wrap">
+    <header class="nav" aria-label="Navegação principal">
+      <a class="brand" href="#inicio"><span class="brand-mark" aria-hidden="true"></span>Nivo</a>
+      <nav class="nav-links">
+        <a href="#salas">Salas</a><a href="#endereco">Endereço</a><a href="#planos">Planos</a><a href="#como-funciona">Como funciona</a><a href="#faq">FAQ</a>
+      </nav>
+      <a class="btn btn-primary" href="#contato">Falar com a Nivo</a>
+      <button class="menu-btn" aria-label="Abrir menu" id="menuOpen">☰</button>
+    </header>
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <button class="close" aria-label="Fechar menu" id="menuClose">×</button>
+    <nav><a href="#salas">Salas</a><a href="#endereco">Endereço</a><a href="#planos">Planos</a><a href="#como-funciona">Como funciona</a><a href="#faq">FAQ</a><a href="#contato">Contato</a></nav>
+    <small>Boqueirão • Curitiba</small>
+  </div>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <span class="eyebrow">Infraestrutura profissional sob demanda</span>
+          <h1>Seu espaço profissional. Só quando você precisar.</h1>
+          <p class="lead">Salas privativas, endereço para sua empresa e estrutura profissional no Boqueirão — sem o custo de manter um escritório tradicional.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#salas">Reservar uma sala</a>
+            <a class="btn btn-secondary" href="#endereco">Quero um endereço</a>
+          </div>
+          <div class="hero-meta"><span><i></i>Boqueirão • Curitiba</span><span>Privado • flexível • profissional</span></div>
+        </div>
+        <div class="hero-visual reveal" aria-label="Ambiente profissional da Nivo">
+          <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1400&q=85" alt="Sala profissional clara e moderna" />
+          <span class="floating-pill">Nivo • Boqueirão</span>
+          <div class="hero-card"><div><strong>Estrutura pronta para o seu próximo encontro.</strong><small>Atendimento, reunião, trabalho ou videoconferência.</small></div><span aria-hidden="true">↗</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <span class="eyebrow reveal">Escolha seu caminho</span>
+        <h2 class="reveal" style="margin-top:14px">O que você precisa hoje?</h2>
+        <div class="need-grid">
+          <a class="need-card reveal" href="#salas"><div><span class="num">01</span><h3 style="margin-top:14px">Preciso de uma sala</h3><p>Um espaço profissional para trabalhar, atender ou reunir.</p></div><span class="need-cta"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.1 4.9A9.86 9.86 0 0 0 12.08 2C6.62 2 2.18 6.44 2.18 11.9c0 1.74.46 3.44 1.32 4.93L2.1 22l5.29-1.39a9.9 9.9 0 0 0 4.68 1.19h.01c5.46 0 9.9-4.44 9.9-9.9 0-2.65-1.02-5.14-2.88-7Zm-7.02 15.23h-.01a8.2 8.2 0 0 1-4.18-1.14l-.3-.18-3.14.83.84-3.06-.2-.31a8.2 8.2 0 1 1 6.99 3.86Zm4.5-6.14c-.25-.13-1.47-.73-1.7-.81-.23-.09-.4-.13-.57.12-.17.25-.65.81-.8.98-.15.17-.3.19-.55.06-.25-.12-1.05-.39-2-1.24a7.48 7.48 0 0 1-1.39-1.72c-.15-.25-.02-.38.11-.5.11-.11.25-.29.37-.44.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.44-.06-.12-.57-1.37-.78-1.88-.2-.49-.41-.42-.57-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.23.9 2.43 1.02 2.59.13.17 1.77 2.7 4.28 3.79.6.26 1.06.41 1.43.52.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.16-.48-.28Z"/></svg> Falar sobre salas</span></a>
+          <a class="need-card reveal" href="#endereco"><div><span class="num">02</span><h3 style="margin-top:14px">Preciso de um endereço</h3><p>Um endereço profissional para sua empresa sem precisar manter um escritório.</p></div><span class="need-cta"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.1 4.9A9.86 9.86 0 0 0 12.08 2C6.62 2 2.18 6.44 2.18 11.9c0 1.74.46 3.44 1.32 4.93L2.1 22l5.29-1.39a9.9 9.9 0 0 0 4.68 1.19h.01c5.46 0 9.9-4.44 9.9-9.9 0-2.65-1.02-5.14-2.88-7Zm-7.02 15.23h-.01a8.2 8.2 0 0 1-4.18-1.14l-.3-.18-3.14.83.84-3.06-.2-.31a8.2 8.2 0 1 1 6.99 3.86Zm4.5-6.14c-.25-.13-1.47-.73-1.7-.81-.23-.09-.4-.13-.57.12-.17.25-.65.81-.8.98-.15.17-.3.19-.55.06-.25-.12-1.05-.39-2-1.24a7.48 7.48 0 0 1-1.39-1.72c-.15-.25-.02-.38.11-.5.11-.11.25-.29.37-.44.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.44-.06-.12-.57-1.37-.78-1.88-.2-.49-.41-.42-.57-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.23.9 2.43 1.02 2.59.13.17 1.77 2.7 4.28 3.79.6.26 1.06.41 1.43.52.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.16-.48-.28Z"/></svg> Quero um endereço</span></a>
+          <a class="need-card reveal" href="#planos"><div><span class="num">03</span><h3 style="margin-top:14px">Quero os dois</h3><p>Tenha seu endereço na Nivo e utilize nossas salas quando precisar.</p></div><span class="need-cta"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19.1 4.9A9.86 9.86 0 0 0 12.08 2C6.62 2 2.18 6.44 2.18 11.9c0 1.74.46 3.44 1.32 4.93L2.1 22l5.29-1.39a9.9 9.9 0 0 0 4.68 1.19h.01c5.46 0 9.9-4.44 9.9-9.9 0-2.65-1.02-5.14-2.88-7Zm-7.02 15.23h-.01a8.2 8.2 0 0 1-4.18-1.14l-.3-.18-3.14.83.84-3.06-.2-.31a8.2 8.2 0 1 1 6.99 3.86Zm4.5-6.14c-.25-.13-1.47-.73-1.7-.81-.23-.09-.4-.13-.57.12-.17.25-.65.81-.8.98-.15.17-.3.19-.55.06-.25-.12-1.05-.39-2-1.24a7.48 7.48 0 0 1-1.39-1.72c-.15-.25-.02-.38.11-.5.11-.11.25-.29.37-.44.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.44-.06-.12-.57-1.37-.78-1.88-.2-.49-.41-.42-.57-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.23.9 2.43 1.02 2.59.13.17 1.77 2.7 4.28 3.79.6.26 1.06.41 1.43.52.6.19 1.14.16 1.57.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.06-.1-.23-.16-.48-.28Z"/></svg> Ver plano completo</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container concept-shell">
+        <div class="concept-copy reveal">
+          <span class="eyebrow">O jeito Nivo</span>
+          <h2 style="margin-top:14px">Ter um negócio não deveria significar pagar por um escritório vazio.</h2>
+          <p class="lead">A Nivo foi criada para profissionais e empresas que precisam de estrutura profissional, mas não necessariamente de um escritório todos os dias.</p>
+          <div class="mini-list"><div class="mini-item">Tenha um endereço para sua empresa.</div><div class="mini-item">Reserve uma sala quando precisar.</div><div class="mini-item">Receba clientes com profissionalismo.</div></div>
+        </div>
+        <div class="comparison-stack">
+          <article class="compare-card reveal"><div class="compare-head"><h3>Escritório tradicional</h3><span>Custo fixo</span></div><div class="cost-list"><div class="cost-row"><span>Aluguel</span><span>todo mês</span></div><div class="cost-row"><span>Condomínio</span><span>todo mês</span></div><div class="cost-row"><span>Internet + energia</span><span>todo mês</span></div><div class="cost-row"><span>Manutenção</span><span>contínua</span></div></div></article>
+          <article class="compare-card dark reveal"><div class="compare-head"><h3>Nivo</h3><span>Uso inteligente</span></div><div class="cost-list"><div class="cost-row"><span>Endereço</span><span>quando fizer sentido</span></div><div class="cost-row"><span>Sala</span><span>quando precisar</span></div><div class="cost-row"><span>Estrutura</span><span>pronta</span></div><div class="cost-row"><span>Flexibilidade</span><span>sempre</span></div></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="salas">
+      <div class="container">
+        <div class="rooms-head reveal"><div><span class="eyebrow">Salas por hora</span><h2 style="margin-top:14px">Uma sala profissional quando você precisar.</h2></div><p class="lead">Para atender, reunir, trabalhar ou simplesmente ter algumas horas de privacidade e concentração.</p></div>
+        <div class="room-carousel">
+        <div class="room-grid" id="roomTrack" tabindex="0" aria-label="Salas Nivo — deslize horizontalmente para ver mais">
+          <article class="room-card reveal"><div class="room-image"><img loading="lazy" src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=900&q=82" alt="Sala privativa para atendimento" /></div><div class="room-body"><div class="room-top"><h3>Sala Essencial</h3><span class="muted">até 2 pessoas</span></div><p>Compacta, silenciosa e ideal para atendimentos individuais.</p><div class="tags"><span class="tag">Atendimento</span><span class="tag">Consultoria</span><span class="tag">Videochamada</span></div><div class="room-foot"><span>Valor sob consulta</span><a class="btn-ghost" href="#contato">Reservar →</a></div></div></article>
+          <article class="room-card reveal"><div class="room-image"><img loading="lazy" src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=82" alt="Sala profissional para reuniões" /></div><div class="room-body"><div class="room-top"><h3>Sala Conexão</h3><span class="muted">até 4 pessoas</span></div><p>Um ambiente versátil para reuniões, entrevistas e trabalho concentrado.</p><div class="tags"><span class="tag">Reunião</span><span class="tag">Entrevista</span><span class="tag">Trabalho</span></div><div class="room-foot"><span>Valor sob consulta</span><a class="btn-ghost" href="#contato">Reservar →</a></div></div></article>
+          <article class="room-card reveal"><div class="room-image"><img loading="lazy" src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=900&q=82" alt="Sala ampla para reunião profissional" /></div><div class="room-body"><div class="room-top"><h3>Sala Reunião</h3><span class="muted">capacidade a confirmar</span></div><p>Mais espaço para encontros de equipe, apresentações e conversas importantes.</p><div class="tags"><span class="tag">Reunião</span><span class="tag">Apresentação</span><span class="tag">Equipe</span></div><div class="room-foot"><span>Valor sob consulta</span><a class="btn-ghost" href="#contato">Reservar →</a></div></div></article>
+        </div>
+        <div class="room-carousel-ui">
+          <div class="room-scroll-hint">Arraste para o lado para conhecer as salas</div>
+          <div class="room-progress" aria-hidden="true"><span id="roomProgress"></span></div>
+          <div class="room-carousel-actions"><button class="room-nav" id="roomPrev" type="button" aria-label="Sala anterior">←</button><button class="room-nav" id="roomNext" type="button" aria-label="Próxima sala">→</button></div>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section address-section" id="endereco">
+      <div class="container address-grid">
+        <div class="address-copy reveal"><span class="eyebrow">Endereço Nivo</span><h2 style="margin-top:14px">Sua empresa tem endereço. Você não precisa ter um escritório.</h2><p class="lead">Tenha um endereço profissional para sua empresa no Boqueirão e utilize a estrutura da Nivo quando precisar.</p><div class="address-actions"><a class="btn btn-primary" href="#contato">Quero um endereço</a></div><p class="legal-note">Disponibilidade sujeita à análise da atividade e às regras aplicáveis.</p></div>
+        <div class="benefit-grid">
+          <article class="benefit reveal"><div class="icon">⌂</div><strong>Endereço profissional</strong><p>Um endereço vinculado à sua empresa conforme a modalidade contratada.</p></article>
+          <article class="benefit reveal"><div class="icon">◌</div><strong>Privacidade</strong><p>Evite expor seu endereço residencial na rotina do seu negócio.</p></article>
+          <article class="benefit reveal"><div class="icon">↘</div><strong>Economia</strong><p>Estrutura profissional sem assumir o custo de um escritório tradicional.</p></article>
+          <article class="benefit reveal"><div class="icon">↔</div><strong>Flexibilidade</strong><p>Quando precisar receber alguém, reserve uma sala da Nivo.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section bridge">
+      <div class="container bridge-layout">
+        <div class="bridge-copy reveal"><span class="eyebrow">Endereço + espaço</span><h2 style="margin-top:14px">Seu endereço fica aqui. Seu escritório aparece quando você precisar.</h2><p class="lead">A Nivo acompanha a rotina real do seu negócio — sem obrigar você a pagar por estrutura ociosa.</p></div>
+        <div class="week reveal"><div class="week-row"><span class="week-day">Segunda</span><strong>Trabalha de casa</strong><span class="week-badge">Sem deslocamento</span></div><div class="week-row"><span class="week-day">Quarta</span><strong>Reunião com cliente → Nivo</strong><span class="week-badge">Sala reservada</span></div><div class="week-row"><span class="week-day">Sexta</span><strong>Atendimento → Nivo</strong><span class="week-badge">Estrutura pronta</span></div><div class="week-row"><span class="week-day">Todos</span><strong>Empresa com endereço profissional</strong><span class="week-badge">Nivo</span></div></div>
+      </div>
+    </section>
+
+    <section class="section audience-section" id="para-quem">
+      <div class="container">
+        <div class="audience-playground reveal">
+          <div class="audience-copy"><span class="eyebrow">Para quem é</span><h2 style="margin-top:14px">Seu trabalho muda. Seu espaço acompanha.</h2><p>Da consulta à reunião, do home office ao encontro com um cliente: a Nivo entra na rotina de quem precisa de presença profissional sem manter uma sala parada.</p><span class="audience-note">Passe o mouse e encontre sua rotina</span></div>
+          <div class="role-cloud" aria-label="Profissionais que podem usar a Nivo">
+            <div class="role-row"><span class="audience">Psicólogos</span><span class="audience">Nutricionistas</span><span class="audience">Advogados</span><span class="audience">Consultores</span><span class="audience">Corretores</span></div>
+            <div class="role-row"><span class="audience">Home office</span><span class="audience">Contadores</span><span class="audience">Recrutadores</span><span class="audience">Autônomos</span><span class="audience">Empresas digitais</span></div>
+            <div class="role-row"><span class="audience">Profissionais financeiros</span><span class="audience">Pequenas empresas</span><span class="audience">Mentores</span><span class="audience">Prestadores de serviço</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="planos">
+      <div class="container"><span class="eyebrow reveal">Planos Nivo</span><h2 class="reveal" style="margin-top:14px">Escolha a estrutura que acompanha o seu momento.</h2><div class="plans">
+        <article class="plan reveal"><span class="plan-badge"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 7v5l3 2"/></svg> Sob demanda</span><span class="plan-label">Nivo Flex</span><h3>Preciso de espaço.</h3><p class="plan-desc">Para quem quer reservar uma sala somente quando precisar.</p><div class="plan-price">A partir de 40 <small>/ h</small></div><div class="plan-list"><span><i>✓</i> Salas por hora</span><span><i>✓</i> Sem mensalidade obrigatória</span><span><i>✓</i> Reserva conforme disponibilidade</span></div><a class="btn btn-secondary" href="#contato">Reservar sala</a></article>
+        <article class="plan reveal"><span class="plan-badge base"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h16M6 20V8l6-4 6 4v12M9 11h2M13 11h2M9 15h2M13 15h2"/></svg> Base profissional</span><span class="plan-label">Nivo Base</span><h3>Preciso de um endereço.</h3><p class="plan-desc">Para empresas que querem presença profissional sem escritório fixo.</p><div class="plan-price">A partir de 150 <small>/ mês</small></div><div class="plan-list"><span><i>✓</i> Endereço conforme contratação</span><span><i>✓</i> Estrutura profissional</span><span><i>✓</i> Possibilidade de reservar salas</span></div><a class="btn btn-secondary" href="#contato">Quero meu endereço</a></article>
+        <article class="plan featured reveal"><span class="plan-badge pro"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.2 2.8c.4 3-1.8 4.2-3 6.1-1.7 2.7-.9 6.5 2.1 7.7-1.3-2.1-.4-3.9.8-5.1.1 2 1.6 2.8 2.4 4.2 1.3 2.2-.1 5.2-2.9 5.5 4.2.6 7.4-2.4 7.4-6.4 0-4.1-2.7-7.6-6.8-12z"/></svg> Mais completo</span><span class="plan-label">Nivo Pro</span><h3>Quero minha estrutura profissional.</h3><p class="plan-desc">Endereço + uso de salas em um plano pensado para recorrência.</p><div class="plan-price">Sob consulta <small>/ mês</small></div><div class="plan-list"><span><i>✓</i> Endereço</span><span><i>✓</i> Pacote de horas a definir</span><span><i>✓</i> Condição diferenciada em horas extras</span></div><a class="btn btn-primary" href="#contato">Conhecer Nivo Pro</a></article>
+      </div></div>
+    </section>
+
+    <section class="section" id="como-funciona">
+      <div class="container process-wrap">
+        <div class="process-intro reveal"><div><span class="eyebrow">Como funciona</span><h2 style="margin-top:14px">Da ideia à Nivo em quatro movimentos.</h2></div><p class="lead">Você conta o que precisa. A gente organiza o caminho. Conforme você rola, o processo avança com você.</p></div>
+        <div class="process-steps" id="processSteps">
+          <div class="process-step reveal active"><span class="process-arrow">↗</span><span class="step-num">01</span><h3>Conte o que você precisa</h3><p>Sala, endereço ou os dois. Começamos pela sua rotina, não por um pacote pronto.</p></div>
+          <div class="process-step reveal"><span class="process-arrow">↗</span><span class="step-num">02</span><h3>Encaixe certo</h3><p>A Nivo verifica sua atividade e apresenta a modalidade adequada para você.</p></div>
+          <div class="process-step reveal"><span class="process-arrow">↗</span><span class="step-num">03</span><h3>Escolha e confirme</h3><p>Você escolhe o plano ou horário que faz sentido e conclui a contratação.</p></div>
+          <div class="process-step reveal"><span class="process-arrow">✓</span><span class="step-num">04</span><h3>Pronto. É Nivo.</h3><p>Seu negócio passa a contar com a estrutura contratada e você usa o espaço quando precisar.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container location-card reveal"><div class="location-copy"><span class="eyebrow">Localização</span><h2 style="margin-top:14px">Seu espaço profissional no Boqueirão.</h2><p>Rua das Carmelitas, 1869<br>Boqueirão • Curitiba — PR</p><div class="location-actions"><a class="btn btn-primary" target="_blank" rel="noopener" href="https://maps.app.goo.gl/VmfFXcYcGQUo9nfg6?g_st=iw">Abrir no mapa ↗</a></div></div><div class="map-sim" aria-hidden="true"><span class="pin"></span></div></div>
+    </section>
+
+    <section class="section faq-section" id="faq">
+      <div class="container faq"><div class="reveal"><span class="eyebrow">Perguntas frequentes</span><h2 style="margin-top:14px">Sem complicação.</h2><p class="lead" style="margin-top:18px">As dúvidas mais comuns antes de contratar.</p></div><div class="faq-list reveal">
+        <div class="faq-item open"><button class="faq-q"><span>O que é endereço fiscal?</span><span>+</span></button><div class="faq-a"><div><p>É o endereço utilizado pela empresa para fins cadastrais e fiscais, conforme a modalidade contratada e a atividade exercida.</p></div></div></div>
+        <div class="faq-item"><button class="faq-q"><span>Qualquer empresa pode utilizar o endereço?</span><span>+</span></button><div class="faq-a"><div><p>Não necessariamente. A possibilidade depende da atividade empresarial, das regras aplicáveis e da análise da Nivo.</p></div></div></div>
+        <div class="faq-item"><button class="faq-q"><span>Preciso trabalhar na Nivo todos os dias?</span><span>+</span></button><div class="faq-a"><div><p>Não. A proposta é utilizar a estrutura conforme a sua necessidade, sem manter um escritório fixo todos os dias.</p></div></div></div>
+        <div class="faq-item"><button class="faq-q"><span>Posso receber clientes na Nivo?</span><span>+</span></button><div class="faq-a"><div><p>Sim, mediante reserva e disponibilidade de uma sala adequada ao encontro.</p></div></div></div>
+        <div class="faq-item"><button class="faq-q"><span>Posso contratar somente uma sala?</span><span>+</span></button><div class="faq-a"><div><p>Sim. A modalidade Flex é pensada para quem precisa apenas do espaço em momentos específicos.</p></div></div></div>
+        <div class="faq-item"><button class="faq-q"><span>Como funciona o recebimento de correspondências?</span><span>+</span></button><div class="faq-a"><div><p>A política de recebimento e retirada deve ser confirmada com a Nivo conforme o plano contratado.</p></div></div></div>
+      </div></div><div class="faq-to-cta" aria-hidden="true">Próximo passo</div>
+    </section>
+
+    <section class="section contact-section" id="contato">
+      <div class="container"><div class="cta-panel reveal"><span class="eyebrow">Próximo passo</span><h2 style="margin-top:14px">Seu negócio não precisa de um escritório inteiro. Precisa da estrutura certa.</h2><p class="lead">Tenha endereço, espaço e estrutura profissional no Boqueirão de forma mais flexível.</p><div class="hero-actions"><a class="btn btn-primary" href="mailto:contato@nivo.com.br?subject=Quero%20conhecer%20a%20Nivo">Quero conhecer a Nivo</a><a class="btn btn-secondary" href="#salas">Ver salas</a></div></div></div>
+    </section>
+  </main>
+
+  <footer><div class="container"><div class="footer-grid"><div class="footer-brand"><a class="brand" href="#inicio"><span class="brand-mark"></span>Nivo</a><p>Infraestrutura profissional sob demanda. Endereço quando sua empresa precisa existir. Espaço quando você precisa estar presente.</p></div><div class="footer-col"><strong>Explorar</strong><div><a href="#salas">Salas</a><a href="#endereco">Endereço</a><a href="#planos">Planos</a><a href="#faq">FAQ</a></div></div><div class="footer-col"><strong>Localização</strong><div><span>Rua das Carmelitas, 1869</span><span>Boqueirão • Curitiba — PR</span></div></div></div><div class="footer-bottom"><span>© <span id="year"></span> Nivo.</span><span>Valores, capacidades e políticas operacionais devem ser confirmados antes da publicação.</span></div></div></footer>
+
+  <script>
+    const $=(s,c=document)=>c.querySelector(s), $$=(s,c=document)=>[...c.querySelectorAll(s)];
+    $('#year').textContent=new Date().getFullYear();
+
+    const menu=$('#mobileMenu');
+    function setMenu(open){menu.classList.toggle('open',open);menu.setAttribute('aria-hidden',String(!open));document.body.style.overflow=open?'hidden':'';}
+    $('#menuOpen').addEventListener('click',()=>setMenu(true));
+    $('#menuClose').addEventListener('click',()=>setMenu(false));
+    $$('#mobileMenu a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
+
+    $$('.faq-q').forEach(btn=>btn.addEventListener('click',()=>{
+      const item=btn.closest('.faq-item');
+      item.classList.toggle('open');
+    }));
+
+    const roomTrack=$('#roomTrack'),roomPrev=$('#roomPrev'),roomNext=$('#roomNext'),roomProgress=$('#roomProgress');
+    const updateRooms=()=>{if(!roomTrack)return;const max=roomTrack.scrollWidth-roomTrack.clientWidth;const ratio=max>0?roomTrack.scrollLeft/max:0;const cards=$$('.room-card');const step=cards[0]?cards[0].getBoundingClientRect().width+14:1;const idx=Math.round(roomTrack.scrollLeft/step);if(roomProgress)roomProgress.style.transform=`translateX(${Math.min(cards.length-1,Math.max(0,idx))*100}%)`;if(roomPrev)roomPrev.disabled=roomTrack.scrollLeft<8;if(roomNext)roomNext.disabled=roomTrack.scrollLeft>max-8;};
+    const moveRooms=dir=>{if(!roomTrack)return;const card=$('.room-card');const amount=(card?card.getBoundingClientRect().width:roomTrack.clientWidth*.82)+14;roomTrack.scrollBy({left:dir*amount,behavior:'smooth'});};
+    roomPrev?.addEventListener('click',()=>moveRooms(-1));roomNext?.addEventListener('click',()=>moveRooms(1));roomTrack?.addEventListener('scroll',updateRooms,{passive:true});addEventListener('resize',updateRooms,{passive:true});updateRooms();
+
+    if(!matchMedia('(prefers-reduced-motion: reduce)').matches){
+      const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}}),{threshold:.12,rootMargin:'0px 0px -5%'});
+      $$('.reveal').forEach(el=>io.observe(el));
+      const hero=$('.hero-visual img');
+      const processSteps=$('#processSteps');
+      const processCards=$$('.process-step');
+      const updateProcess=()=>{
+        if(!processSteps) return;
+        const rect=processSteps.getBoundingClientRect();
+        const vh=innerHeight;
+        const raw=(vh*.72-rect.top)/(rect.height+vh*.42);
+        const progress=Math.max(0,Math.min(1,raw));
+        processSteps.style.setProperty('--progress',`${progress*88}%`);
+        const idx=Math.min(processCards.length-1,Math.max(0,Math.floor(progress*processCards.length)));
+        processCards.forEach((card,i)=>card.classList.toggle('active',i<=idx));
+      };
+      addEventListener('scroll',()=>{
+        if(innerWidth>980 && hero){const y=Math.min(scrollY*.055,35);hero.style.transform=`scale(1.02) translateY(${y}px)`}
+        updateProcess();
+      },{passive:true});
+      addEventListener('resize',updateProcess,{passive:true});
+      updateProcess();
+    } else $$('.reveal').forEach(el=>el.classList.add('visible'));
+  </script>
+</body>
+</html>
