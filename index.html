@@ -4,11 +4,95 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="theme-color" content="#f5f3ee" />
-  <meta name="description" content="Nivo — salas privativas, endereço fiscal/comercial e estrutura profissional sob demanda no Boqueirão, Curitiba." />
-  <title>Nivo — Infraestrutura profissional sob demanda</title>
+  <meta name="color-scheme" content="light" />
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+  <meta name="description" content="Salas privativas por hora, sala de reunião e endereço fiscal e comercial no Boqueirão, Curitiba. Estrutura profissional flexível para empresas e autônomos." />
+  <title>Endereço Fiscal e Salas por Hora em Curitiba | Nivo</title>
+
+  <!-- Open Graph / compartilhamento -->
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Nivo" />
+  <meta property="og:title" content="Endereço Fiscal e Salas por Hora em Curitiba | Nivo" />
+  <meta property="og:description" content="Salas privativas, sala de reunião e endereço fiscal e comercial no Boqueirão, Curitiba. Use estrutura profissional somente quando precisar." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&amp;fit=crop&amp;w=1200&amp;q=82" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Nivo | Salas por Hora e Endereço Fiscal em Curitiba" />
+  <meta name="twitter:description" content="Estrutura profissional flexível no Boqueirão: salas privativas, reuniões e endereço fiscal e comercial." />
+
+  <!-- Ícone leve, sem requisição adicional -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23171714'/%3E%3Ccircle cx='32' cy='32' r='20' fill='none' stroke='%23f5f3ee' stroke-width='3'/%3E%3Ccircle cx='32' cy='32' r='8' fill='%23f5f3ee'/%3E%3C/svg%3E" />
+
+  <!-- Conexões antecipadas apenas para origens críticas -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://images.unsplash.com" />
+  <link rel="dns-prefetch" href="//wa.me" />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- IMPORTANTE: após definir o domínio oficial, adicione uma canonical absoluta, por exemplo:
+  <link rel="canonical" href="https://SEU-DOMINIO.com.br/" />
+  -->
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Nivo",
+  "description": "Salas privativas por hora, sala de reunião e endereço fiscal e comercial no Boqueirão, Curitiba, com estrutura profissional sob demanda.",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Rua das Carmelitas, 1869",
+    "addressLocality": "Curitiba",
+    "addressRegion": "PR",
+    "postalCode": "81650-060",
+    "addressCountry": "BR"
+  },
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Curitiba"
+    },
+    {
+      "@type": "Place",
+      "name": "Boqueirão, Curitiba"
+    }
+  ],
+  "hasMap": "https://maps.app.goo.gl/VmfFXcYcGQUo9nfg6?g_st=iw",
+  "priceRange": "R$",
+  "makesOffer": [
+    {
+      "@type": "Offer",
+      "price": "40",
+      "priceCurrency": "BRL",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Sala privativa por hora",
+        "description": "Uso de sala profissional por hora para atendimento, reunião e trabalho."
+      }
+    },
+    {
+      "@type": "Offer",
+      "price": "150",
+      "priceCurrency": "BRL",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Endereço fiscal e comercial",
+        "description": "Endereço profissional para empresas, sujeito à análise da atividade e às regras aplicáveis."
+      }
+    },
+    {
+      "@type": "Offer",
+      "itemOffered": {
+        "@type": "Service",
+        "name": "Sala de reunião em Curitiba",
+        "description": "Sala profissional sob demanda para reuniões, apresentações e encontros de equipe."
+      }
+    }
+  ]
+}
+  </script>
+
   <style>
     :root{
       --ink:#171714;
@@ -32,7 +116,10 @@
     }
 
     *{box-sizing:border-box}
-    html{scroll-behavior:smooth;scroll-padding-top:92px}
+    html{scroll-behavior:smooth;scroll-padding-top:92px;text-size-adjust:100%}
+    :focus-visible{outline:3px solid var(--accent-2);outline-offset:4px}
+    .skip-link{position:fixed;left:16px;top:10px;z-index:999;transform:translateY(-150%);padding:10px 14px;border-radius:999px;background:var(--ink);color:#fff;font-weight:700;transition:transform .2s}
+    .skip-link:focus{transform:none}
     body{
       margin:0;
       color:var(--ink);
@@ -45,18 +132,18 @@
       -webkit-font-smoothing:antialiased;
       overflow-x:hidden;
     }
-    img{max-width:100%;display:block}
+    img{max-width:100%;display:block;height:auto}
     a{color:inherit;text-decoration:none}
     button,input{font:inherit}
     button{cursor:pointer}
     ::selection{background:var(--ink);color:var(--paper)}
 
     .container{width:min(var(--max),calc(100% - 2*var(--pad)));margin-inline:auto}
-    .section{padding-block:var(--section);position:relative}
+    .section{padding-block:var(--section);position:relative;content-visibility:auto;contain-intrinsic-size:1px 720px}
     .eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:.78rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent)}
     .eyebrow::before{content:"";width:20px;height:1px;background:currentColor}
     h1,h2,h3{font-family:"Manrope",sans-serif;line-height:1.04;letter-spacing:-.045em;margin:0}
-    h1{font-size:clamp(2.75rem,7vw,6.8rem);max-width:11ch}
+    h1{font-size:clamp(2.75rem,7vw,6.8rem);max-width:13ch}
     h2{font-size:clamp(2.15rem,5vw,4.65rem);max-width:13ch}
     h3{font-size:clamp(1.22rem,2vw,1.7rem)}
     p{margin:0;color:rgba(23,23,20,.74)}
@@ -193,6 +280,7 @@
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
   <div class="nav-wrap">
     <header class="nav" aria-label="Navegação principal">
       <a class="brand" href="#inicio"><span class="brand-mark" aria-hidden="true"></span>Nivo</a>
@@ -200,23 +288,23 @@
         <a href="#salas">Salas</a><a href="#endereco">Endereço</a><a href="#planos">Planos</a><a href="#como-funciona">Como funciona</a><a href="#faq">FAQ</a>
       </nav>
       <a class="btn btn-primary" target="_blank" rel="noopener" href="https://wa.me/5541999505625?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Nivo%20e%20gostaria%20de%20saber%20mais.">Falar com a Nivo</a>
-      <button class="menu-btn" aria-label="Abrir menu" id="menuOpen">☰</button>
+      <button class="menu-btn" aria-label="Abrir menu" aria-controls="mobileMenu" aria-expanded="false" id="menuOpen">☰</button>
     </header>
   </div>
 
-  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true" inert>
     <button class="close" aria-label="Fechar menu" id="menuClose">×</button>
     <nav><a href="#salas">Salas</a><a href="#endereco">Endereço</a><a href="#planos">Planos</a><a href="#como-funciona">Como funciona</a><a href="#faq">FAQ</a><a target="_blank" rel="noopener" href="https://wa.me/5541999505625?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Nivo%20e%20gostaria%20de%20saber%20mais.">Contato</a></nav>
     <small>Boqueirão • Curitiba</small>
   </div>
 
-  <main>
+  <main id="conteudo">
     <section class="hero" id="inicio">
       <div class="container hero-grid">
         <div class="hero-copy reveal">
-          <span class="eyebrow">Infraestrutura profissional sob demanda</span>
-          <h1>Seu espaço profissional. Só quando você precisar.</h1>
-          <p class="lead">Salas privativas, endereço para sua empresa e estrutura profissional no Boqueirão — sem o custo de manter um escritório tradicional.</p>
+          <span class="eyebrow">Seu espaço. No seu tempo.</span>
+          <h1>Salas por hora e endereço fiscal em Curitiba.</h1>
+          <p class="lead">Na Nivo, no Boqueirão, você reserva salas privativas para atendimento, reuniões e trabalho e pode contratar endereço fiscal e comercial sem precisar manter um escritório tradicional.</p>
           <div class="hero-actions">
             <a class="btn btn-primary" target="_blank" rel="noopener" href="https://wa.me/5541999505625?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Nivo%20e%20gostaria%20de%20reservar%20uma%20sala.">Reservar uma sala</a>
             <a class="btn btn-secondary" target="_blank" rel="noopener" href="https://wa.me/5541999505625?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Nivo%20e%20gostaria%20de%20entender%20como%20funciona%20o%20endere%C3%A7o%20fiscal/comercial.">Quero um endereço</a>
@@ -224,7 +312,13 @@
           <div class="hero-meta"><span><i></i>Boqueirão • Curitiba</span><span>Privado • flexível • profissional</span></div>
         </div>
         <div class="hero-visual reveal" aria-label="Ambiente profissional da Nivo">
-          <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1400&q=85" alt="Sala profissional clara e moderna" />
+          <img
+            src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&amp;fit=crop&amp;w=1200&amp;q=82"
+            srcset="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&amp;fit=crop&amp;w=640&amp;q=78 640w, https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&amp;fit=crop&amp;w=960&amp;q=80 960w, https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&amp;fit=crop&amp;w=1400&amp;q=82 1400w"
+            sizes="(max-width: 980px) 100vw, 48vw"
+            width="1400" height="1050"
+            fetchpriority="high" decoding="async"
+            alt="Sala profissional da Nivo para atendimento e reuniões no Boqueirão, Curitiba" />
           <span class="floating-pill">Nivo • Boqueirão</span>
           <div class="hero-card"><div><strong>Estrutura pronta para o seu próximo encontro.</strong><small>Atendimento, reunião, trabalho ou videoconferência.</small></div><span aria-hidden="true">↗</span></div>
         </div>
@@ -260,12 +354,12 @@
 
     <section class="section" id="salas">
       <div class="container">
-        <div class="rooms-head reveal"><div><span class="eyebrow">Salas por hora</span><h2 style="margin-top:14px">Uma sala profissional quando você precisar.</h2></div><p class="lead">Para atender, reunir, trabalhar ou simplesmente ter algumas horas de privacidade e concentração.</p></div>
+        <div class="rooms-head reveal"><div><span class="eyebrow">Salas por hora</span><h2 style="margin-top:14px">Salas por hora no Boqueirão, Curitiba.</h2></div><p class="lead">Reserve uma sala privativa para atendimento, reunião, entrevista, videochamada ou trabalho concentrado, conforme a sua necessidade.</p></div>
         <div class="room-carousel">
         <div class="room-grid" id="roomTrack" tabindex="0" aria-label="Salas Nivo — deslize horizontalmente para ver mais">
-          <article class="room-card reveal"><div class="room-image"><img loading="lazy" src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=900&q=82" alt="Sala privativa para atendimento" /></div><div class="room-body"><div class="room-top"><h3>Sala Essencial</h3><span class="muted">até 2 pessoas</span></div><p>Compacta, silenciosa e ideal para atendimentos individuais.</p><div class="tags"><span class="tag">Atendimento</span><span class="tag">Consultoria</span><span class="tag">Videochamada</span></div><div class="room-foot"><span>Valor sob consulta</span><a class="btn-ghost" target="_blank" rel="noopener" href="https://wa.me/5541999505625?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Nivo%20e%20gostaria%20de%20reservar%20uma%20sala.">Reservar →</a></div></div></article>
-          <article class="room-card reveal"><div class="room-image"><img loading="lazy" src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=82" alt="Sala profissional para reuniões" /></div><div class="room-body"><div class="room-top"><h3>Sala Conexão</h3><span class="muted">até 4 pessoas</span></div><p>Um ambiente versátil para reuniões, entrevistas e trabalho concentrado.</p><div class="tags"><span class="tag">Reunião</span><span class="tag">Entrevista</span><span class="tag">Trabalho</span></div><div class="room-foot"><span>Valor sob consulta</span><a class="btn-ghost" target="_blank" rel="noopener" href="https://wa.me/5541999505625?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Nivo%20e%20gostaria%20de%20reservar%20uma%20sala.">Reservar →</a></div></div></article>
-          <article class="room-card reveal"><div class="room-image"><img loading="lazy" src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=900&q=82" alt="Sala ampla para reunião profissional" /></div><div class="room-body"><div class="room-top"><h3>Sala Reunião</h3><span class="muted">capacidade a confirmar</span></div><p>Mais espaço para encontros de equipe, apresentações e conversas importantes.</p><div class="tags"><span class="tag">Reunião</span><span class="tag">Apresentação</span><span class="tag">Equipe</span></div><div class="room-foot"><span>Valor sob consulta</span><a class="btn-ghost" target="_blank" rel="noopener" href="https://wa.me/5541999505625?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Nivo%20e%20gostaria%20de%20reservar%20uma%20sala.">Reservar →</a></div></div></article>
+          <article class="room-card reveal"><div class="room-image"><img loading="lazy" decoding="async" width="900" height="675" src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&amp;fit=crop&amp;w=800&amp;q=78" srcset="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&amp;fit=crop&amp;w=480&amp;q=76 480w, https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&amp;fit=crop&amp;w=800&amp;q=78 800w, https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&amp;fit=crop&amp;w=1100&amp;q=80 1100w" sizes="(max-width: 680px) 82vw, (max-width: 980px) 72vw, 390px" alt="Sala privativa para atendimento profissional por hora na Nivo, em Curitiba" /></div><div class="room-body"><div class="room-top"><h3>Sala Essencial</h3><span class="muted">até 5 pessoas</span></div><p>Compacta, silenciosa e ideal para atendimentos individuais.</p><div class="tags"><span class="tag">Atendimento</span><span class="tag">Consultoria</span><span class="tag">Videochamada</span></div><div class="room-foot"><span>Valor sob consulta</span><a class="btn-ghost" target="_blank" rel="noopener" href="https://wa.me/5541999505625?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Nivo%20e%20gostaria%20de%20reservar%20uma%20sala.">Reservar →</a></div></div></article>
+          <article class="room-card reveal"><div class="room-image"><img loading="lazy" decoding="async" width="900" height="675" src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&amp;fit=crop&amp;w=800&amp;q=78" srcset="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&amp;fit=crop&amp;w=480&amp;q=76 480w, https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&amp;fit=crop&amp;w=800&amp;q=78 800w, https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&amp;fit=crop&amp;w=1100&amp;q=80 1100w" sizes="(max-width: 680px) 82vw, (max-width: 980px) 72vw, 390px" alt="Sala de reunião privativa por hora na Nivo, no Boqueirão em Curitiba" /></div><div class="room-body"><div class="room-top"><h3>Sala Conexão</h3><span class="muted">até 5 pessoas</span></div><p>Um ambiente versátil para reuniões, entrevistas e trabalho concentrado.</p><div class="tags"><span class="tag">Reunião</span><span class="tag">Entrevista</span><span class="tag">Trabalho</span></div><div class="room-foot"><span>Valor sob consulta</span><a class="btn-ghost" target="_blank" rel="noopener" href="https://wa.me/5541999505625?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Nivo%20e%20gostaria%20de%20reservar%20uma%20sala.">Reservar →</a></div></div></article>
+          <article class="room-card reveal"><div class="room-image"><img loading="lazy" decoding="async" width="900" height="675" src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&amp;fit=crop&amp;w=800&amp;q=78" srcset="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&amp;fit=crop&amp;w=480&amp;q=76 480w, https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&amp;fit=crop&amp;w=800&amp;q=78 800w, https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&amp;fit=crop&amp;w=1100&amp;q=80 1100w" sizes="(max-width: 680px) 82vw, (max-width: 980px) 72vw, 390px" alt="Sala ampla para reunião e equipe na Nivo, em Curitiba" /></div><div class="room-body"><div class="room-top"><h3>Sala Reunião</h3><span class="muted">até 10 pessoas</span></div><p>Mais espaço para encontros de equipe, apresentações e conversas importantes.</p><div class="tags"><span class="tag">Reunião</span><span class="tag">Apresentação</span><span class="tag">Equipe</span></div><div class="room-foot"><span>Valor sob consulta</span><a class="btn-ghost" target="_blank" rel="noopener" href="https://wa.me/5541999505625?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Nivo%20e%20gostaria%20de%20reservar%20uma%20sala.">Reservar →</a></div></div></article>
         </div>
         <div class="room-carousel-ui">
           <div class="room-scroll-hint">Arraste para o lado para conhecer as salas</div>
@@ -278,7 +372,7 @@
 
     <section class="section address-section" id="endereco">
       <div class="container address-grid">
-        <div class="address-copy reveal"><span class="eyebrow">Endereço Nivo</span><h2 style="margin-top:14px">Sua empresa tem endereço. Você não precisa ter um escritório.</h2><p class="lead">Tenha um endereço profissional para sua empresa no Boqueirão e utilize a estrutura da Nivo quando precisar.</p><div class="address-actions"><a class="btn btn-primary" target="_blank" rel="noopener" href="https://wa.me/5541999505625?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Nivo%20e%20gostaria%20de%20entender%20como%20funciona%20o%20endere%C3%A7o%20fiscal/comercial.">Quero um endereço</a></div><p class="legal-note">Disponibilidade sujeita à análise da atividade e às regras aplicáveis.</p></div>
+        <div class="address-copy reveal"><span class="eyebrow">Endereço fiscal e comercial</span><h2 style="margin-top:14px">Endereço fiscal em Curitiba sem precisar manter um escritório fixo.</h2><p class="lead">Tenha um endereço profissional para abertura ou regularização da sua empresa no Boqueirão, sujeito à análise da atividade, e utilize as salas da Nivo quando precisar.</p><div class="address-actions"><a class="btn btn-primary" target="_blank" rel="noopener" href="https://wa.me/5541999505625?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Nivo%20e%20gostaria%20de%20entender%20como%20funciona%20o%20endere%C3%A7o%20fiscal/comercial.">Quero um endereço</a></div><p class="legal-note">Disponibilidade sujeita à análise da atividade e às regras aplicáveis.</p></div>
         <div class="benefit-grid">
           <article class="benefit reveal"><div class="icon">⌂</div><strong>Endereço profissional</strong><p>Um endereço vinculado à sua empresa conforme a modalidade contratada.</p></article>
           <article class="benefit reveal"><div class="icon">◌</div><strong>Privacidade</strong><p>Evite expor seu endereço residencial na rotina do seu negócio.</p></article>
@@ -312,7 +406,7 @@
       <div class="container"><span class="eyebrow reveal">Planos Nivo</span><h2 class="reveal" style="margin-top:14px">Escolha a estrutura que acompanha o seu momento.</h2><div class="plans">
         <article class="plan reveal"><span class="plan-badge"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M12 7v5l3 2"/></svg> Sob demanda</span><span class="plan-label">Nivo Flex</span><h3>Preciso de espaço.</h3><p class="plan-desc">Para quem quer reservar uma sala somente quando precisar.</p><div class="plan-price">A partir de 40 <small>/ h</small></div><div class="plan-list"><span><i>✓</i> Salas por hora</span><span><i>✓</i> Sem mensalidade obrigatória</span><span><i>✓</i> Reserva conforme disponibilidade</span></div><a class="btn btn-secondary" target="_blank" rel="noopener" href="https://wa.me/5541999505625?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Nivo%20e%20gostaria%20de%20reservar%20uma%20sala.">Reservar sala</a></article>
         <article class="plan reveal"><span class="plan-badge base"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h16M6 20V8l6-4 6 4v12M9 11h2M13 11h2M9 15h2M13 15h2"/></svg> Base profissional</span><span class="plan-label">Nivo Base</span><h3>Preciso de um endereço.</h3><p class="plan-desc">Para empresas que querem presença profissional sem escritório fixo.</p><div class="plan-price">A partir de 150 <small>/ mês</small></div><div class="plan-list"><span><i>✓</i> Endereço conforme contratação</span><span><i>✓</i> Estrutura profissional</span><span><i>✓</i> Possibilidade de reservar salas</span></div><a class="btn btn-secondary" target="_blank" rel="noopener" href="https://wa.me/5541999505625?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Nivo%20e%20gostaria%20de%20entender%20como%20funciona%20o%20endere%C3%A7o%20fiscal/comercial.">Quero meu endereço</a></article>
-        <article class="plan featured reveal"><span class="plan-badge pro"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.2 2.8c.4 3-1.8 4.2-3 6.1-1.7 2.7-.9 6.5 2.1 7.7-1.3-2.1-.4-3.9.8-5.1.1 2 1.6 2.8 2.4 4.2 1.3 2.2-.1 5.2-2.9 5.5 4.2.6 7.4-2.4 7.4-6.4 0-4.1-2.7-7.6-6.8-12z"/></svg> Mais completo</span><span class="plan-label">Nivo Pro</span><h3>Quero minha estrutura profissional.</h3><p class="plan-desc">Endereço + uso de salas em um plano pensado para recorrência.</p><div class="plan-price">Sob consulta <small>/ mês</small></div><div class="plan-list"><span><i>✓</i> Endereço</span><span><i>✓</i> Pacote de horas a definir</span><span><i>✓</i> Condição diferenciada em horas extras</span></div><a class="btn btn-primary" target="_blank" rel="noopener" href="https://wa.me/5541999505625?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Nivo%20e%20gostaria%20de%20conhecer%20o%20Nivo%20Pro.">Conhecer Nivo Pro</a></article>
+        <article class="plan featured reveal"><span class="plan-badge pro"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.2 2.8c.4 3-1.8 4.2-3 6.1-1.7 2.7-.9 6.5 2.1 7.7-1.3-2.1-.4-3.9.8-5.1.1 2 1.6 2.8 2.4 4.2 1.3 2.2-.1 5.2-2.9 5.5 4.2.6 7.4-2.4 7.4-6.4 0-4.1-2.7-7.6-6.8-12z"/></svg> Mais completo</span><span class="plan-label">Nivo Pro</span><h3>Quero minha estrutura profissional.</h3><p class="plan-desc">Endereço + uso de salas em um plano pensado para recorrência.</p><div class="plan-price">Sob consulta <small>/ mês</small></div><div class="plan-list"><span><i>✓</i> Endereço</span><span><i>✓</i> Pacote de horas incluído</span><span><i>✓</i> Condição diferenciada em horas extras</span></div><a class="btn btn-primary" target="_blank" rel="noopener" href="https://wa.me/5541999505625?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Nivo%20e%20gostaria%20de%20conhecer%20o%20Nivo%20Pro.">Conhecer Nivo Pro</a></article>
       </div></div>
     </section>
 
@@ -328,45 +422,47 @@
       </div>
     </section>
 
-    <section class="section">
-      <div class="container location-card reveal"><div class="location-copy"><span class="eyebrow">Localização</span><h2 style="margin-top:14px">Seu espaço profissional no Boqueirão.</h2><p>Rua das Carmelitas, 1869<br>Boqueirão • Curitiba — PR</p><div class="location-actions"><a class="btn btn-primary" target="_blank" rel="noopener" href="https://maps.app.goo.gl/VmfFXcYcGQUo9nfg6?g_st=iw">Abrir no mapa ↗</a></div></div><div class="map-sim" aria-hidden="true"><span class="pin"></span></div></div>
+    <section class="section" id="localizacao">
+      <div class="container location-card reveal"><div class="location-copy"><span class="eyebrow">Localização</span><h2 style="margin-top:14px">Nivo no Boqueirão, Curitiba.</h2><address style="font-style:normal;margin-top:16px;color:rgba(23,23,20,.74)">Rua das Carmelitas, 1869<br>Boqueirão • Curitiba — PR<br>CEP 81650-060</address><div class="location-actions"><a class="btn btn-primary" target="_blank" rel="noopener" href="https://maps.app.goo.gl/VmfFXcYcGQUo9nfg6?g_st=iw">Abrir no mapa ↗</a></div></div><div class="map-sim" aria-hidden="true"><span class="pin"></span></div></div>
     </section>
 
     <section class="section faq-section" id="faq">
       <div class="container faq"><div class="reveal"><span class="eyebrow">Perguntas frequentes</span><h2 style="margin-top:14px">Sem complicação.</h2><p class="lead" style="margin-top:18px">As dúvidas mais comuns antes de contratar.</p></div><div class="faq-list reveal">
-        <div class="faq-item open"><button class="faq-q"><span>O que é endereço fiscal?</span><span>+</span></button><div class="faq-a"><div><p>É o endereço utilizado pela empresa para fins cadastrais e fiscais, conforme a modalidade contratada e a atividade exercida.</p></div></div></div>
-        <div class="faq-item"><button class="faq-q"><span>Qualquer empresa pode utilizar o endereço?</span><span>+</span></button><div class="faq-a"><div><p>Não necessariamente. A possibilidade depende da atividade empresarial, das regras aplicáveis e da análise da Nivo.</p></div></div></div>
-        <div class="faq-item"><button class="faq-q"><span>Preciso trabalhar na Nivo todos os dias?</span><span>+</span></button><div class="faq-a"><div><p>Não. A proposta é utilizar a estrutura conforme a sua necessidade, sem manter um escritório fixo todos os dias.</p></div></div></div>
-        <div class="faq-item"><button class="faq-q"><span>Posso receber clientes na Nivo?</span><span>+</span></button><div class="faq-a"><div><p>Sim, mediante reserva e disponibilidade de uma sala adequada ao encontro.</p></div></div></div>
-        <div class="faq-item"><button class="faq-q"><span>Posso contratar somente uma sala?</span><span>+</span></button><div class="faq-a"><div><p>Sim. A modalidade Flex é pensada para quem precisa apenas do espaço em momentos específicos.</p></div></div></div>
-        <div class="faq-item"><button class="faq-q"><span>Como funciona o recebimento de correspondências?</span><span>+</span></button><div class="faq-a"><div><p>A política de recebimento e retirada deve ser confirmada com a Nivo conforme o plano contratado.</p></div></div></div>
+        <div class="faq-item open"><button class="faq-q" aria-expanded="true" aria-controls="faq-a1" id="faq-q1"><span>O que é endereço fiscal?</span><span aria-hidden="true">+</span></button><div class="faq-a" id="faq-a1" role="region" aria-labelledby="faq-q1"><div><p>É o endereço utilizado pela empresa para fins cadastrais e fiscais, conforme a modalidade contratada e a atividade exercida.</p></div></div></div>
+        <div class="faq-item"><button class="faq-q" aria-expanded="false" aria-controls="faq-a2" id="faq-q2"><span>Qualquer empresa pode utilizar o endereço?</span><span aria-hidden="true">+</span></button><div class="faq-a" id="faq-a2" role="region" aria-labelledby="faq-q2"><div><p>Não necessariamente. A possibilidade depende da atividade empresarial, das regras aplicáveis e da análise da Nivo.</p></div></div></div>
+        <div class="faq-item"><button class="faq-q" aria-expanded="false" aria-controls="faq-a3" id="faq-q3"><span>Preciso trabalhar na Nivo todos os dias?</span><span aria-hidden="true">+</span></button><div class="faq-a" id="faq-a3" role="region" aria-labelledby="faq-q3"><div><p>Não. A proposta é utilizar a estrutura conforme a sua necessidade, sem manter um escritório fixo todos os dias.</p></div></div></div>
+        <div class="faq-item"><button class="faq-q" aria-expanded="false" aria-controls="faq-a4" id="faq-q4"><span>Posso receber clientes na Nivo?</span><span aria-hidden="true">+</span></button><div class="faq-a" id="faq-a4" role="region" aria-labelledby="faq-q4"><div><p>Sim, mediante reserva e disponibilidade de uma sala adequada ao encontro.</p></div></div></div>
+        <div class="faq-item"><button class="faq-q" aria-expanded="false" aria-controls="faq-a5" id="faq-q5"><span>Posso contratar somente uma sala?</span><span aria-hidden="true">+</span></button><div class="faq-a" id="faq-a5" role="region" aria-labelledby="faq-q5"><div><p>Sim. A modalidade Flex é pensada para quem precisa apenas do espaço em momentos específicos.</p></div></div></div>
+        <div class="faq-item"><button class="faq-q" aria-expanded="false" aria-controls="faq-a6" id="faq-q6"><span>Como funciona o recebimento de correspondências?</span><span aria-hidden="true">+</span></button><div class="faq-a" id="faq-a6" role="region" aria-labelledby="faq-q6"><div><p>A política de recebimento e retirada deve ser confirmada com a Nivo conforme o plano contratado.</p></div></div></div>
       </div></div><div class="faq-to-cta" aria-hidden="true">Próximo passo</div>
     </section>
 
     <section class="section contact-section" id="contato">
-      <div class="container"><div class="cta-panel reveal"><span class="eyebrow">Próximo passo</span><h2 style="margin-top:14px">Seu negócio não precisa de um escritório inteiro. Precisa da estrutura certa.</h2><p class="lead">Tenha endereço, espaço e estrutura profissional no Boqueirão de forma mais flexível.</p><div class="hero-actions"><a class="btn btn-primary" target="_blank" rel="noopener" href="https://wa.me/5541999505625?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Nivo%20e%20gostaria%20de%20saber%20mais.">Quero conhecer a Nivo</a><a class="btn btn-secondary" target="_blank" rel="noopener" href="https://wa.me/5541999505625?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Nivo%20e%20gostaria%20de%20reservar%20uma%20sala.">Ver salas</a></div></div></div>
+      <div class="container"><div class="cta-panel reveal"><span class="eyebrow">Próximo passo</span><h2 style="margin-top:14px">Seu negócio não precisa de um escritório inteiro. Precisa da estrutura certa.</h2><p class="lead">Tenha endereço fiscal, sala por hora e estrutura profissional no Boqueirão, em Curitiba, de forma simples e flexível.</p><div class="hero-actions"><a class="btn btn-primary" target="_blank" rel="noopener" href="https://wa.me/5541999505625?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Nivo%20e%20gostaria%20de%20saber%20mais.">Quero conhecer a Nivo</a><a class="btn btn-secondary" target="_blank" rel="noopener" href="https://wa.me/5541999505625?text=Ol%C3%A1%21%20Vim%20pelo%20site%20da%20Nivo%20e%20gostaria%20de%20reservar%20uma%20sala.">Ver salas</a></div></div></div>
     </section>
   </main>
 
-  <footer><div class="container"><div class="footer-grid"><div class="footer-brand"><a class="brand" href="#inicio"><span class="brand-mark"></span>Nivo</a><p>Infraestrutura profissional sob demanda. Endereço quando sua empresa precisa existir. Espaço quando você precisa estar presente.</p></div><div class="footer-col"><strong>Explorar</strong><div><a href="#salas">Salas</a><a href="#endereco">Endereço</a><a href="#planos">Planos</a><a href="#faq">FAQ</a></div></div><div class="footer-col"><strong>Localização</strong><div><span>Rua das Carmelitas, 1869</span><span>Boqueirão • Curitiba — PR</span></div></div></div><div class="footer-bottom"><span>© <span id="year"></span> Nivo.</span><span>Valores, capacidades e políticas operacionais devem ser confirmados antes da publicação.</span></div></div></footer>
+  <footer><div class="container"><div class="footer-grid"><div class="footer-brand"><a class="brand" href="#inicio"><span class="brand-mark"></span>Nivo</a><p>Infraestrutura profissional sob demanda. Endereço quando sua empresa precisa existir. Espaço quando você precisa estar presente.</p></div><div class="footer-col"><strong>Explorar</strong><div><a href="#salas">Salas</a><a href="#endereco">Endereço</a><a href="#planos">Planos</a><a href="#faq">FAQ</a></div></div><div class="footer-col"><strong>Localização</strong><div><address style="font-style:normal"><span>Rua das Carmelitas, 1869</span><span>Boqueirão • Curitiba — PR</span><span>CEP 81650-060</span></address></div></div></div><div class="footer-bottom"><span>© <span id="year"></span> Nivo.</span><span>Condições sujeitas à disponibilidade e, quando aplicável, à análise da atividade.</span></div></div></footer>
 
   <script>
     const $=(s,c=document)=>c.querySelector(s), $$=(s,c=document)=>[...c.querySelectorAll(s)];
     $('#year').textContent=new Date().getFullYear();
 
     const menu=$('#mobileMenu');
-    function setMenu(open){menu.classList.toggle('open',open);menu.setAttribute('aria-hidden',String(!open));document.body.style.overflow=open?'hidden':'';}
+    function setMenu(open){menu.classList.toggle('open',open);menu.setAttribute('aria-hidden',String(!open));menu.toggleAttribute('inert',!open);$('#menuOpen').setAttribute('aria-expanded',String(open));document.body.style.overflow=open?'hidden':'';if(open)$('#menuClose').focus();}
     $('#menuOpen').addEventListener('click',()=>setMenu(true));
     $('#menuClose').addEventListener('click',()=>setMenu(false));
     $$('#mobileMenu a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
+    addEventListener('keydown',e=>{if(e.key==='Escape'&&menu.classList.contains('open'))setMenu(false)});
 
     $$('.faq-q').forEach(btn=>btn.addEventListener('click',()=>{
       const item=btn.closest('.faq-item');
-      item.classList.toggle('open');
+      const open=item.classList.toggle('open');
+      btn.setAttribute('aria-expanded',String(open));
     }));
 
     const roomTrack=$('#roomTrack'),roomPrev=$('#roomPrev'),roomNext=$('#roomNext'),roomProgress=$('#roomProgress');
-    const updateRooms=()=>{if(!roomTrack)return;const max=roomTrack.scrollWidth-roomTrack.clientWidth;const ratio=max>0?roomTrack.scrollLeft/max:0;const cards=$$('.room-card');const step=cards[0]?cards[0].getBoundingClientRect().width+14:1;const idx=Math.round(roomTrack.scrollLeft/step);if(roomProgress)roomProgress.style.transform=`translateX(${Math.min(cards.length-1,Math.max(0,idx))*100}%)`;if(roomPrev)roomPrev.disabled=roomTrack.scrollLeft<8;if(roomNext)roomNext.disabled=roomTrack.scrollLeft>max-8;};
+    const updateRooms=()=>{if(!roomTrack)return;const max=roomTrack.scrollWidth-roomTrack.clientWidth;const cards=$$('.room-card');const step=cards[0]?cards[0].getBoundingClientRect().width+14:1;const idx=Math.round(roomTrack.scrollLeft/step);if(roomProgress)roomProgress.style.transform=`translateX(${Math.min(cards.length-1,Math.max(0,idx))*100}%)`;if(roomPrev)roomPrev.disabled=roomTrack.scrollLeft<8;if(roomNext)roomNext.disabled=roomTrack.scrollLeft>max-8;};
     const moveRooms=dir=>{if(!roomTrack)return;const card=$('.room-card');const amount=(card?card.getBoundingClientRect().width:roomTrack.clientWidth*.82)+14;roomTrack.scrollBy({left:dir*amount,behavior:'smooth'});};
     roomPrev?.addEventListener('click',()=>moveRooms(-1));roomNext?.addEventListener('click',()=>moveRooms(1));roomTrack?.addEventListener('scroll',updateRooms,{passive:true});addEventListener('resize',updateRooms,{passive:true});updateRooms();
 
@@ -386,9 +482,15 @@
         const idx=Math.min(processCards.length-1,Math.max(0,Math.floor(progress*processCards.length)));
         processCards.forEach((card,i)=>card.classList.toggle('active',i<=idx));
       };
+      let scrollTicking=false;
       addEventListener('scroll',()=>{
-        if(innerWidth>980 && hero){const y=Math.min(scrollY*.055,35);hero.style.transform=`scale(1.02) translateY(${y}px)`}
-        updateProcess();
+        if(scrollTicking)return;
+        scrollTicking=true;
+        requestAnimationFrame(()=>{
+          if(innerWidth>980 && hero){const y=Math.min(scrollY*.055,35);hero.style.transform=`scale(1.02) translateY(${y}px)`}
+          updateProcess();
+          scrollTicking=false;
+        });
       },{passive:true});
       addEventListener('resize',updateProcess,{passive:true});
       updateProcess();
