@@ -2,6 +2,39 @@
 
 <html lang="pt-BR">
 <head>
+<!-- Google tag (gtag.js) - Google Ads -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18434766622"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18434766622');
+
+  // Google Ads conversion: Clique no WhatsApp - Nivo
+  function gtag_report_conversion(url) {
+    var callback = function () {
+      if (typeof(url) !== 'undefined') {
+        window.location = url;
+      }
+    };
+    gtag('event', 'conversion', {
+      'send_to': 'AW-18434766622/uDYDCL6Ah_AcEJ7usNZE',
+      'event_callback': callback
+    });
+    return false;
+  }
+
+  // Registra a mesma conversão em qualquer CTA que abra o WhatsApp.
+  // Os links continuam funcionando normalmente (inclusive target="_blank").
+  document.addEventListener('click', function (event) {
+    var target = event.target;
+    if (!target || !target.closest) return;
+    var link = target.closest('a[href*="wa.me/"], a[href*="api.whatsapp.com/"], a[href*="whatsapp.com/send"]');
+    if (!link) return;
+    gtag_report_conversion();
+  }, true);
+</script>
+
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
 <meta content="#F7F4EF" name="theme-color"/>
